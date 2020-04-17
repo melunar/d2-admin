@@ -14,6 +14,14 @@ import i18n from '@/i18n.js'
 import pluginError from '@/plugin/error'
 import pluginLog from '@/plugin/log'
 import pluginOpen from '@/plugin/open'
+import util from '@/libs/util'
+
+// 打印一些环境变量，便于查看
+try {
+  // 查看基础配置参数
+  console.warn('@@ 环境变量')
+  Object.keys(process.env).forEach(key => { util.log.capsule(key, process.env[key]) })
+} catch (e) { util.log.danger('环境变量检测失败') }
 
 export default {
   async install (Vue, options) {
@@ -36,5 +44,7 @@ export default {
     Vue.use(pluginError)
     Vue.use(pluginLog)
     Vue.use(pluginOpen)
+    console.warn('@@ Vue.prototype')
+    console.log(Vue.prototype)
   }
 }
