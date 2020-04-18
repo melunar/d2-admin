@@ -14,6 +14,8 @@ import demoBusiness from './modules/demo-business'
 import demoD2Crud from './modules/demo-d2-crud'
 // 第三方网页
 import demoFrame from './modules/demo-frame'
+// 基本信息管理
+import baseInfo from './modules/base-info'
 
 // 菜单 侧边栏
 export const menuAside = [
@@ -24,7 +26,8 @@ export const menuAside = [
   demoPlayground,
   demoBusiness,
   demoD2Crud,
-  demoFrame
+  demoFrame,
+  baseInfo('aside')
 ]
 
 // 菜单 顶栏
@@ -59,5 +62,6 @@ export const menuHeader = [
     ]
   },
   demoPlayground,
-  demoBusiness
+  demoBusiness,
+  baseInfo('header')
 ]
